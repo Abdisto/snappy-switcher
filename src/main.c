@@ -611,7 +611,7 @@ static int run_daemon(void) {
 }
 
 static void print_help(const char *prog) {
-  printf("Snappy Switcher v2.1.1 - A fast, keyboard-driven window switcher for "
+  printf("Snappy Switcher v2.1.2 - A fast, keyboard-driven window switcher for "
          "Wayland\n\n");
   printf("Usage: %s [OPTION] | <command>\n\n", prog);
   printf("Options:\n");
