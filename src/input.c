@@ -135,7 +135,6 @@ static void keyboard_key(void *data, struct wl_keyboard *keyboard,
   case XKB_KEY_KP_Enter:
     if (app_state->count > 0 && app_state->selected_index >= 0 &&
         app_state->selected_index < app_state->count) {
-      switch_to_window(app_state->windows[app_state->selected_index].address);
       if (on_alt_release)
         on_alt_release();
     }

@@ -314,12 +314,17 @@ static void show_switcher(void) {
 }
 
 static void select_and_hide(void) {
+  char *address = NULL;
   if (visible && app_state.count > 0 && backend) {
     WindowInfo *win = &app_state.windows[app_state.selected_index];
+    address = strdup(win->address);
     LOG("Switching to: %s (using %s backend)", win->title, backend->get_name());
-    backend->activate_window(win->address);
   }
   hide_switcher();
+  if (address) {
+    backend->activate_window(address);
+    free(address);
+  }
 }
 
 static void handle_command(const char *cmd) {
